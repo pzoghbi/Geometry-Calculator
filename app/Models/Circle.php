@@ -4,8 +4,19 @@
 namespace App\Models;
 
 
-class Circle
+use Illuminate\Database\Eloquent\Model;
+
+class Circle extends Model
 {
+    protected $fillable = [
+        'type',
+        'radius',
+        'surface',
+        'circumference'
+    ];
+
+    public $timestamps = false;
+
     public string $type = "circle";
     public float $radius;
     public float $surface;

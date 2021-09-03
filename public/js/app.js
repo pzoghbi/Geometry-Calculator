@@ -3,10 +3,9 @@ let OPTION_CIRCLE = $("#option-circle");
 let OPTION_COMBINE = $("#option-combine");
 let OPTIONS = $(".option");
 
-// Hover effects
+// Clicking on Options Generates new view
 OPTIONS.on("click", function(){
-    // this.querySelector("svg").style.width = 200;
-    location.href = $(this).data("src");
+    location.href += $(this).data("src");
 });
 
 $("#calculate").on("click", function(){
@@ -29,10 +28,17 @@ $("#calculate").on("click", function(){
         url: window.location.pathname + "/" + url,
         // Gets JSON from server as result
         success: function(data){
-            dt = data;
+            dt = JSON.parse(data);
+
+            // remove unwanted keys from json
+            delete dt.id;
+
+            dt = JSON.stringify(dt);
         },
-        error: function(data) {
-            console.log(data);
+        error: function($jqXHR, textStatus, errorThrown) {
+            console.log($jqXHR);
+            console.log(textStatus);
+            console.log(errorThrown);
         },
         // Encodes JSON into URI
         complete: function(){

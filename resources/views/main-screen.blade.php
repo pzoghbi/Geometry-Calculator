@@ -1,7 +1,7 @@
 @extends('app')
 @section('content')
     <div class="row text-center">
-        <div class="col-md-6 border-end py-5 option" id="option-triangle" data-src="/triangle">
+        <div class="col-md-6 border-end py-5 option" id="option-triangle" data-src="triangle">
             <svg width="128px" height="100%" viewBox="0 0 240 186" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
                 <g transform="matrix(1,0,0,1,-596.563,-398.199)">
                     <g transform="matrix(0.803282,0,0,0.803282,138.29,34.3216)">
@@ -11,7 +11,7 @@
             </svg>
             <h3 class="h3 opacity-0">Triangle</h3>
         </div>
-        <div class="col-md-6 py-5 option" id="option-circle" data-src="/circle">
+        <div class="col-md-6 py-5 option" id="option-circle" data-src="circle">
             <svg width="128px" height="100%" viewBox="0 0 186 186" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
                 <g transform="matrix(1,0,0,1,-1132.3,-398.199)">
                     <g transform="matrix(0.803282,0,0,0.803282,241.015,101.416)">
@@ -23,7 +23,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12 text-center border-top py-3 option" id="option-combine" data-src="/combine">
+        <div class="col-md-12 text-center border-top py-3 option" id="option-combine" data-src="combine">
             <div>
                 <svg width="64px" height="100%" viewBox="0 0 96 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
                     <g transform="matrix(1,0,0,1,-912.033,-783.312)">

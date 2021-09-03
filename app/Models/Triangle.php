@@ -3,9 +3,21 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 
-class Triangle
+class Triangle extends Model
 {
+    protected $fillable = [
+        'type',
+        'a',
+        'b',
+        'c',
+        'surface',
+        'circumference'
+    ];
+
+    public $timestamps = false;
+
     public string $type = "triangle";
     public float $a;
     public float $b;

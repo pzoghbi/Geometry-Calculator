@@ -9,11 +9,41 @@ use stdClass;
 class GeometryCalculatorService
 {
     public function CalculateTriangle(float $a, float $b, float $c){
-        return new Triangle($a, $b, $c);
+        $triangle = new Triangle($a, $b, $c);
+
+        // Fill Model Data
+        $triangle->fill([
+            'type' => $triangle->type,
+            'a' => $triangle->a,
+            'b' => $triangle->b,
+            'c' => $triangle->c,
+            'surface' => $triangle->surface,
+            'circumference' => $triangle->circumference
+        ]);
+
+        // Insert into DB
+        $triangle->save();
+
+        // Return json string
+        return $triangle;
     }
 
     public function CalculateCircle(float $radius){
-        return new Circle($radius);
+        $circle = new Circle($radius);
+
+        // Fill Model Data
+        $circle->fill([
+            'type' => $circle->type,
+            'radius' => $circle->radius,
+            'surface' => $circle->surface,
+            'circumference' => $circle->circumference
+        ]);
+
+        // Insert Into Database
+        $circle->save();
+
+        // Return json as string
+        return $circle;
     }
 
     public function CombineObjects(string $a, string $b) {
