@@ -1,8 +1,7 @@
 <?php
 
-use App\Http\Controllers\TriangleController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CircleController;
+use App\Http\Controllers\GeometryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +14,14 @@ use App\Http\Controllers\CircleController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [GeometryController::class, 'MainScreen']);
+Route::get('/triangle', [GeometryController::class, 'CreateTriangle']);
+Route::get('/circle', [GeometryController::class, 'CreateCircle']);
 
-Route::get('/triangle/{a}/{b}/{c}', [TriangleController::class, 'index']);
-Route::get('/circle/{radius}', [CircleController::class, 'index']);
+Route::get('/triangle/{a}/{b}/{c}', [GeometryController::class, 'Triangle']);
+Route::get('/circle/{radius}', [GeometryController::class, 'Circle']);
+
+Route::get('/combine', [GeometryController::class, 'GetCombine']);
+Route::get('/combine/{o1}/{o2}', [GeometryController::class, 'Combine']);
+
+Route::get('/result/{object}', [GeometryController::class, 'Result']);
