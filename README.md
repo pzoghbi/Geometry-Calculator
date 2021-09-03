@@ -1,4 +1,6 @@
-Run:  
+Install:  
 navigate folder, then  
-**composer install  
-php artisan serve**
+**composer install**  
+  
+Run:  
+**php artisan serve**
