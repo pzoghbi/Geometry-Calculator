@@ -25,12 +25,13 @@ class Triangle extends Model
     public float $surface;
     public float $circumference;
 
-    public function __construct($a, $b, $c) {
+    public function Construct($a, $b, $c) {
         $this->a = $a;
         $this->b = $b;
         $this->c = $c;
         $this->surface = $this->CalculateSurface();
         $this->circumference = $this->CalculateCircumference();
+        return $this;
     }
 
     public function CalculateSurface(){

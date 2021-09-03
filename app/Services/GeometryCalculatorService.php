@@ -9,7 +9,8 @@ use stdClass;
 class GeometryCalculatorService
 {
     public function CalculateTriangle(float $a, float $b, float $c){
-        $triangle = new Triangle($a, $b, $c);
+        $triangle = new Triangle;
+        $triangle = $triangle->Construct($a, $b, $c);
 
         // Fill Model Data
         $triangle->fill([
@@ -29,7 +30,8 @@ class GeometryCalculatorService
     }
 
     public function CalculateCircle(float $radius){
-        $circle = new Circle($radius);
+        $circle = new Circle;
+        $circle = $circle->Construct($radius);
 
         // Fill Model Data
         $circle->fill([
@@ -56,5 +58,16 @@ class GeometryCalculatorService
         $combined->surface = $a->surface + $b->surface;
         $combined->circumference = $a->circumference + $b->circumference;
         return $combined;
+    }
+
+    public function GetList()
+    {
+        $triangles = Triangle::all();
+        $circles = Circle::all();
+
+        $list['triangles'] = $triangles;
+        $list['circles'] = $circles;
+
+        return $list;
     }
 }

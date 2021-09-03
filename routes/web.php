@@ -22,11 +22,6 @@ Route::get('/triangle/{a}/{b}/{c}', [GeometryController::class, 'Triangle']);
 Route::get('/circle/{radius}', [GeometryController::class, 'Circle']);
 
 Route::get('/combine', [GeometryController::class, 'GetCombine']);
-Route::get('/combine/triangle', [GeometryController::class, 'CreateTriangle']);
-Route::get('/combine/circle', [GeometryController::class, 'CreateCircle']);
 Route::get('/combine/{o1}/{o2}', [GeometryController::class, 'Combine']);
-
-Route::get('/combine/triangle/{a}/{b}/{c}', [GeometryController::class, 'Triangle']);
-Route::get('/combine/circle/{a}/{b}/{c}', [GeometryController::class, 'Circle']);
 
 Route::get('/result/{object}', [GeometryController::class, 'Result']);

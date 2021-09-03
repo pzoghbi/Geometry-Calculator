@@ -22,10 +22,11 @@ class Circle extends Model
     public float $surface;
     public float $circumference;
 
-    public function __construct($radius) {
+    public function Construct($radius) {
         $this->radius = $radius;
         $this->surface = round($this->CalculateSurface(), 2);
         $this->circumference = round($this->CalculateCircumference(), 2);
+        return $this;
     }
 
     public function CalculateSurface(){
