@@ -1,1 +1,3 @@
-Run: php artisan serve
+Run: 
+composer install
+php artisan serve
