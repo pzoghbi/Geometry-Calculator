@@ -10,94 +10,21 @@
         </a>
     </header>
 
-    {{--    <h1 class="display-6 fw-bold">Geometry calculator</h1>--}}
     <div class="my-5 bg-light rounded-3 shadow-lg w-75 d-flex m-auto">
         <div class="container-fluid">
             @yield('content')
         </div>
     </div>
 
-    {{--    <div class="row align-items-md-stretch">--}}
-    {{--        <div class="col-md-6">--}}
-    {{--            <div class="h-100 p-5 text-white bg-dark rounded-3">--}}
-    {{--                <h2>Change the background</h2>--}}
-    {{--                <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look. Then, mix and match with additional component themes and more.</p>--}}
-    {{--                <button class="btn btn-outline-light" type="button">Example button</button>--}}
-    {{--            </div>--}}
-    {{--        </div>--}}
-    {{--        <div class="col-md-6">--}}
-    {{--            <div class="h-100 p-5 bg-light border rounded-3">--}}
-    {{--                <h2>Add borders</h2>--}}
-    {{--                <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>--}}
-    {{--                <button class="btn btn-outline-secondary" type="button">Example button</button>--}}
-    {{--            </div>--}}
-    {{--        </div>--}}
-    {{--    </div>--}}
-
     <footer class="pt-3 mt-4 text-muted border-top">
         © 2021
     </footer>
 </div>
-<!-- Optional JavaScript; choose one of the two! -->
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-<script>
-    let OPTION_TRIANGLE = $("#option-triangle");
-    let OPTION_CIRCLE = $("#option-circle");
-    let OPTION_COMBINE = $("#option-combine");
-    let OPTIONS = $(".option");
-
-    // Hover effects
-    OPTIONS.on("click", function(){
-        // this.querySelector("svg").style.width = 200;
-        location.href = $(this).data("src");
-    });
-
-    $("#calculate").on("click", function(){
-        // Get collection of inputs
-        let vals = document.getElementsByTagName("input");
-        // Convert HTMLcollection to array
-        vals = [].slice.call(vals);
-
-        // Replace array of elements with their values
-        vals.forEach((e, i) => {
-            vals[i] = e.value;
-        });
-
-        // Join inputs into a URL string
-        let url = vals.join("/");
-        console.log(window.location.pathname + "/" + url)
-        let dt;
-        $.ajax({
-            // Extend the existing path with parameters
-            url: window.location.pathname + "/" + url,
-            // Gets JSON from server as result
-            success: function(data){
-                dt = data;
-            },
-            error: function(data) {
-                console.log(data);
-            },
-            // Encodes JSON into URI
-            complete: function(){
-                $.ajax({
-                    url: "/result/" + encodeURI(dt),
-                    success: function(data){
-                        $(".content").html(data);
-                    },
-                });
-            }
-        });
-
-    });
-</script>
-<!-- Option 2: Separate Popper and Bootstrap JS -->
-<!--
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
--->
+<script src="{{asset('/js/app.js')}}"></script>
 </body>
 </html>
