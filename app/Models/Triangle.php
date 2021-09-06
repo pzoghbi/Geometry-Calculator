@@ -13,7 +13,12 @@ class Triangle extends Model
         'b',
         'c',
         'surface',
-        'circumference'
+        'circumference',
+        'invalid',
+    ];
+
+    protected $casts = [
+        'invalid' => 'boolean',
     ];
 
     public $timestamps = false;
@@ -24,11 +29,19 @@ class Triangle extends Model
     public float $c;
     public float $surface;
     public float $circumference;
+    public bool $invalid = false;
 
     public function Construct($a, $b, $c) {
         $this->a = $a;
         $this->b = $b;
         $this->c = $c;
+
+        // Check if the triangle is possible or not
+        if (!(($a + $b > $c) && ($a + $c > $b) && ($b + $c > $a))) {
+            $this->invalid = (!(($a + $b > $c) && ($a + $c > $b) && ($b + $c > $a)));
+            return $this;
+        }
+
         $this->surface = $this->CalculateSurface();
         $this->circumference = $this->CalculateCircumference();
         return $this;

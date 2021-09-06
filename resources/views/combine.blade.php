@@ -24,6 +24,7 @@
                 <th>c</th>
                 <th>surface</th>
                 <th>circumference</th>
+                <th></th>
             </thead>
             <tbody>
                 @foreach($triangles as $triangle)
@@ -34,6 +35,7 @@
                         <td>{{ $triangle["c"] }}</td>
                         <td>{{ $triangle["surface"] }}</td>
                         <td>{{ $triangle["circumference"] }}</td>
+                        <td data-val="{{ $triangle }}"><input type="checkbox" class=""></td>
                     </tr>
                 @endforeach
             </tbody>
@@ -41,24 +43,26 @@
 
         <table class="table table-hover table-striped">
             <thead>
-            <th>Type</th>
-            <th>radius</th>
-            <th>surface</th>
-            <th>circumference</th>
+                <th>Type</th>
+                <th>radius</th>
+                <th>surface</th>
+                <th>circumference</th>
+                <th></th>
             </thead>
             <tbody>
             @foreach($circles as $circle)
                 <tr>
-                    <td>{{ $triangle["type"] }}</td>
-                    <td>{{ $triangle["radius"] }}</td>
-                    <td>{{ $triangle["surface"] }}</td>
-                    <td>{{ $triangle["circumference"] }}</td>
+                    <td>{{ $circle["type"] }}</td>
+                    <td>{{ $circle["radius"] }}</td>
+                    <td>{{ $circle["surface"] }}</td>
+                    <td>{{ $circle["circumference"] }}</td>
+                    <td data-val="{{ $circle }}"><input type="checkbox" class=""></td>
                 </tr>
             @endforeach
             </tbody>
         </table>
     </div>
     <div class="row text-center py-2">
-        <h4 class="h4">Select an object to combine</h4>
+        <h4 class="h4">Select two objects to combine</h4>
     </div>
 @endsection

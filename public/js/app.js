@@ -28,6 +28,7 @@ $("#calculate").on("click", function(){
         url: window.location.pathname + "/" + url,
         // Gets JSON from server as result
         success: function(data){
+            console.log(data)
             dt = JSON.parse(data);
 
             // remove unwanted keys from json

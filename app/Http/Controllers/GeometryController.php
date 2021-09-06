@@ -30,11 +30,11 @@ class GeometryController extends Controller
     }
 
     public function CreateTriangle() {
-        return View('create.triangle');
+        return View('triangle.create');
     }
 
     public function CreateCircle() {
-        return View('create.circle');
+        return View('circle.create');
     }
 
     public function GetCombine() {

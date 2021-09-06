@@ -12,6 +12,14 @@ class GeometryCalculatorService
         $triangle = new Triangle;
         $triangle = $triangle->Construct($a, $b, $c);
 
+        // if impossible, throw out the triangle
+        if ($triangle->invalid) {
+            $triangle->fill([
+                'invalid' => $triangle->invalid
+            ]);
+            return $triangle;
+        }
+
         // Fill Model Data
         $triangle->fill([
             'type' => $triangle->type,
