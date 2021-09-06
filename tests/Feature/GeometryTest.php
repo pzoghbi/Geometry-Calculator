@@ -16,8 +16,12 @@ class GeometryTest extends TestCase
      */
     use RefreshDatabase;
 
-    public function test_impossible_triangle_not_flagged_as_invalid(){
-        $triangle = (new GeometryCalculatorService())->CalculateTriangle(30, 40, 900);
+    public function test_impossible_triangle_flagged_as_invalid(){
+        $triangle = (new GeometryCalculatorService())->CalculateTriangle(
+            30,
+            40,
+            900
+        );
         $this->assertEquals(true, $triangle->invalid);
     }
 }
