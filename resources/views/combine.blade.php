@@ -15,7 +15,14 @@
             <h4 class="h4 d-inline-block mx-2">Combine</h4>
         </div>
     </div>
+    <div class="row text-center py-2">
+        <h4 class="h4 offset-md-3 col-md-6 d-inline-block">Select <u>two</u> objects to combine</h4>
+        <div class="col-auto">
+            <button class="btn btn-success" disabled id="btn-combine">Combine</button>
+        </div>
+    </div>
     <div class="row">
+        <h4 >Triangles</h4>
         <table class="table table-hover table-striped">
             <thead>
                 <th>Type</th>
@@ -29,7 +36,7 @@
             <tbody>
                 @foreach($triangles as $triangle)
                     <tr>
-                        <td>{{ $triangle["type"] }}</td>
+                        <td><img width="24px" src="{{ asset('img/svg/Triangle-Aquablue.svg') }}" alt="Triangle"></td>
                         <td>{{ $triangle["a"] }}</td>
                         <td>{{ $triangle["b"] }}</td>
                         <td>{{ $triangle["c"] }}</td>
@@ -41,6 +48,7 @@
             </tbody>
         </table>
 
+        <h4 class="h4 mt-2">Circles</h4>
         <table class="table table-hover table-striped">
             <thead>
                 <th>Type</th>
@@ -52,7 +60,7 @@
             <tbody>
             @foreach($circles as $circle)
                 <tr>
-                    <td>{{ $circle["type"] }}</td>
+                    <td><img width="24px" src="{{ asset('img/svg/Circle-Orangered.svg') }}" alt="Circle"></td>
                     <td>{{ $circle["radius"] }}</td>
                     <td>{{ $circle["surface"] }}</td>
                     <td>{{ $circle["circumference"] }}</td>
@@ -62,7 +70,8 @@
             </tbody>
         </table>
     </div>
-    <div class="row text-center py-2">
-        <h4 class="h4">Select two objects to combine</h4>
-    </div>
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('js/combine_geometry.js') }}"></script>
+@endpush

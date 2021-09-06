@@ -1,0 +1,41 @@
+svg {
+    transition: .2s all linear;
+}
+
+/* option title */
+h3.h3, span.h4 {
+    position: relative;
+    transition: .2s all linear;
+}
+
+span.h4 {
+    opacity: 0;
+    transform: translateX(64px);
+}
+
+.option:hover svg{
+    transform: scale(1.1);
+}
+
+.option:hover{
+    background: #ebebeb;
+    cursor: pointer;
+}
+
+.option:hover h3{
+    opacity: 1 !important;
+    transform: translateY(-8px);
+}
+
+#option-combine svg{
+    transform: translateX(64px);
+}
+
+#option-combine:hover span.h4 {
+    opacity: 1 !important;
+    transform: translateX(0);
+}
+
+#option-combine:hover svg{
+    transform: translateX(0);
+}

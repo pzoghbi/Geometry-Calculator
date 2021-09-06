@@ -14,6 +14,7 @@ class GeometryTest extends TestCase
      *
      * @return void
      */
+    // Not currently being used - for reference
     use RefreshDatabase;
 
     public function test_impossible_triangle_flagged_as_invalid(){

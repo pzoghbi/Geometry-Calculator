@@ -24,3 +24,6 @@ under database key of the driver, change the env key from *DB_DATABASE* to **DB_
 go to **phpunit.xml** file  
 uncomment DB_CONNECTION and DB_DATABASE,  
 change DB_CONNECTION value to mysql_testing  
+
+#### UI
+run **composer require laravel/ui**
