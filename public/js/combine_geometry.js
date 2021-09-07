@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+
     const $checkboxes = $("input[type='checkbox']");
     let object1 = {};
     let object2 = {};

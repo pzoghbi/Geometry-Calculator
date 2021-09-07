@@ -37,12 +37,17 @@ class GeometryController extends Controller
         return View('circle.create');
     }
 
-    public function GetCombine() {
+    public function GetShapes() {
         $list = (new GeometryCalculatorService())->GetList();
-        return View('combine')->with([
-            'triangles' => $list['triangles'],
-            'circles' => $list['circles']
-        ]);
+        return json_encode($list, JSON_PRETTY_PRINT);
+//        return View('combine')->with([
+//            'triangles' => $list['triangles'],
+//            'circles' => $list['circles']
+//        ]);
+    }
+
+    public function GetCombine() {
+        return View('combine');
     }
 
     public function Result(string $object){

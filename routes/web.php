@@ -22,6 +22,7 @@ Route::get('/triangle/{a}/{b}/{c}', [GeometryController::class, 'Triangle']);
 Route::get('/circle/{radius}', [GeometryController::class, 'Circle']);
 
 Route::get('/combine', [GeometryController::class, 'GetCombine']);
+Route::get('/getshapes', [GeometryController::class, 'GetShapes']);
 Route::get('/combine/{o1}/{o2}', [GeometryController::class, 'Combine']);
 
 Route::get('/result/{object}', [GeometryController::class, 'Result']);

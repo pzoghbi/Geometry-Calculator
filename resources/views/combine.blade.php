@@ -21,57 +21,59 @@
             <button class="btn btn-success" disabled id="btn-combine">Combine</button>
         </div>
     </div>
-    <div class="row">
-        <h4 >Triangles</h4>
-        <table class="table table-hover table-striped">
-            <thead>
-                <th>Type</th>
-                <th>a</th>
-                <th>b</th>
-                <th>c</th>
-                <th>surface</th>
-                <th>circumference</th>
-                <th></th>
-            </thead>
-            <tbody>
-                @foreach($triangles as $triangle)
-                    <tr>
-                        <td><img width="24px" src="{{ asset('img/svg/Triangle-Aquablue.svg') }}" alt="Triangle"></td>
-                        <td>{{ $triangle["a"] }}</td>
-                        <td>{{ $triangle["b"] }}</td>
-                        <td>{{ $triangle["c"] }}</td>
-                        <td>{{ $triangle["surface"] }}</td>
-                        <td>{{ $triangle["circumference"] }}</td>
-                        <td data-val="{{ $triangle }}"><input type="checkbox" class=""></td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
 
-        <h4 class="h4 mt-2">Circles</h4>
-        <table class="table table-hover table-striped">
-            <thead>
-                <th>Type</th>
-                <th>radius</th>
-                <th>surface</th>
-                <th>circumference</th>
-                <th></th>
-            </thead>
-            <tbody>
-            @foreach($circles as $circle)
-                <tr>
-                    <td><img width="24px" src="{{ asset('img/svg/Circle-Orangered.svg') }}" alt="Circle"></td>
-                    <td>{{ $circle["radius"] }}</td>
-                    <td>{{ $circle["surface"] }}</td>
-                    <td>{{ $circle["circumference"] }}</td>
-                    <td data-val="{{ $circle }}"><input type="checkbox" class=""></td>
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
+{{--    Vue component--}}
+    <div id="app">
+        <combine-geometry></combine-geometry>
     </div>
-@endsection
 
-@push('scripts')
-    <script src="{{ asset('js/combine_geometry.js') }}"></script>
-@endpush
+{{--    <div class="row">--}}
+{{--        <h4 >Triangles</h4>--}}
+{{--        <table class="table table-hover table-striped">--}}
+{{--            <thead>--}}
+{{--                <th>Type</th>--}}
+{{--                <th>a</th>--}}
+{{--                <th>b</th>--}}
+{{--                <th>c</th>--}}
+{{--                <th>surface</th>--}}
+{{--                <th>circumference</th>--}}
+{{--                <th></th>--}}
+{{--            </thead>--}}
+{{--            <tbody>--}}
+{{--                @foreach($triangles as $triangle)--}}
+{{--                    <tr>--}}
+{{--                        <td><img width="24px" src="{{ asset('img/svg/Triangle-Aquablue.svg') }}" alt="Triangle"></td>--}}
+{{--                        <td>{{ $triangle["a"] }}</td>--}}
+{{--                        <td>{{ $triangle["b"] }}</td>--}}
+{{--                        <td>{{ $triangle["c"] }}</td>--}}
+{{--                        <td>{{ $triangle["surface"] }}</td>--}}
+{{--                        <td>{{ $triangle["circumference"] }}</td>--}}
+{{--                        <td data-val="{{ $triangle }}"><input type="checkbox" class=""></td>--}}
+{{--                    </tr>--}}
+{{--                @endforeach--}}
+{{--            </tbody>--}}
+{{--        </table>--}}
+
+{{--        <h4 class="h4 mt-2">Circles</h4>--}}
+{{--        <table class="table table-hover table-striped">--}}
+{{--            <thead>--}}
+{{--                <th>Type</th>--}}
+{{--                <th>radius</th>--}}
+{{--                <th>surface</th>--}}
+{{--                <th>circumference</th>--}}
+{{--                <th></th>--}}
+{{--            </thead>--}}
+{{--            <tbody>--}}
+{{--            @foreach($circles as $circle)--}}
+{{--                <tr>--}}
+{{--                    <td><img width="24px" src="{{ asset('img/svg/Circle-Orangered.svg') }}" alt="Circle"></td>--}}
+{{--                    <td>{{ $circle["radius"] }}</td>--}}
+{{--                    <td>{{ $circle["surface"] }}</td>--}}
+{{--                    <td>{{ $circle["circumference"] }}</td>--}}
+{{--                    <td data-val="{{ $circle }}"><input type="checkbox" class=""></td>--}}
+{{--                </tr>--}}
+{{--            @endforeach--}}
+{{--            </tbody>--}}
+{{--        </table>--}}
+{{--    </div>--}}
+@endsection
