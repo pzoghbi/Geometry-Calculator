@@ -2084,6 +2084,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "CombineGeometry",
   data: function data() {
@@ -2101,6 +2105,19 @@ __webpack_require__.r(__webpack_exports__);
     })["catch"](function (error) {
       return console.log(error.message);
     });
+  },
+  methods: {
+    selectObject: function selectObject(event) {
+      console.log(event);
+
+      if ($(".selected").length < 2) {
+        $(event.target.closest(".row")).toggleClass("bg-dark text-light selected");
+      } else {
+        this.shapes.triangles.forEach(function (e) {
+          alert(e.id);
+        });
+      }
+    }
   }
 });
 
@@ -37646,37 +37663,63 @@ var render = function() {
     [
       _vm._l(_vm.shapes.triangles, function(triangle) {
         return _c("div", [
-          _vm._v(
-            "\n        " +
-              _vm._s(triangle.id) +
-              "\n        " +
-              _vm._s(triangle.a) +
-              "\n        " +
-              _vm._s(triangle.b) +
-              "\n        " +
-              _vm._s(triangle.c) +
-              "\n        " +
-              _vm._s(triangle.surface) +
-              "\n        " +
-              _vm._s(triangle.circumference) +
-              "\n    "
+          _c(
+            "div",
+            {
+              staticClass: "row",
+              attrs: { "data-id": triangle.id },
+              on: {
+                click: function($event) {
+                  return _vm.selectObject($event)
+                }
+              }
+            },
+            [
+              _c("div", { staticClass: "col-md-2" }, [
+                _vm._v(_vm._s(triangle.id))
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-2" }, [
+                _vm._v(_vm._s(triangle.a))
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-2" }, [
+                _vm._v(_vm._s(triangle.b))
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-2" }, [
+                _vm._v(_vm._s(triangle.c))
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-2" }, [
+                _vm._v(_vm._s(triangle.surface))
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-2" }, [
+                _vm._v(_vm._s(triangle.circumference))
+              ])
+            ]
           )
         ])
       }),
       _vm._v(" "),
       _vm._l(_vm.shapes.circles, function(circle) {
         return _c("div", [
-          _vm._v(
-            "\n        " +
-              _vm._s(circle.id) +
-              "\n        " +
-              _vm._s(circle.radius) +
-              "\n        " +
-              _vm._s(circle.surface) +
-              "\n        " +
-              _vm._s(circle.circumference) +
-              "\n    "
-          )
+          _c("div", { staticClass: "row", attrs: { "data-id": circle.id } }, [
+            _c("div", { staticClass: "col-md-2" }, [_vm._v(_vm._s(circle.id))]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-6" }, [
+              _vm._v(_vm._s(circle.radius))
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-2" }, [
+              _vm._v(_vm._s(circle.surface))
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-2" }, [
+              _vm._v(_vm._s(circle.circumference))
+            ])
+          ])
         ])
       })
     ],

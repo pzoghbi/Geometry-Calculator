@@ -25,5 +25,6 @@ go to **phpunit.xml** file
 uncomment DB_CONNECTION and DB_DATABASE,  
 change DB_CONNECTION value to mysql_testing  
 
-#### UI
-run **composer require laravel/ui**
+#### UI (vue)
+npm install  
+npm run dev
